@@ -39,4 +39,7 @@ public class Application extends Controller {
         return ok(periodik.render(json));
     }
 
+    public Result search() {
+        return ok(form.render());
+    }
 }
