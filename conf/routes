@@ -5,8 +5,8 @@
 # Home page
 #GET     /                           controllers.Application.index()
 #GET     /:unsur                     controllers.Application.index(unsur: String)
-GET     /unsur/:unsur                     controllers.Application.index(unsur: String)
-GET     /periodik/:unsur            controllers.Application.periodiks(unsur: String)
+GET     /unsur/:unsur               controllers.Application.index(unsur: String)
+GET     /periodik                   controllers.Application.periodiks(unsur: String)
 GET     /search                     controllers.Application.search()
 
 # Map static resources from the /public folder to the /assets URL path
