@@ -4,7 +4,8 @@
 * two arguments, a `String` for the title of the page and an `Html`
 * object to insert into the body of the page.
 *@
-@(json: String)
+@import org.apache.jena.query.QuerySolution
+@(result: QuerySolution, variable: List[String])
 
 <!DOCTYPE html>
 <html lang="en">
@@ -18,6 +19,13 @@
   <body>
     @* And here's where we render the `Html` object containing
     * the page content. *@
-    @json
+    @for(d <- variable) {
+      <li>
+      @String.valueOf(d) =>
+        <a href="http://localhost:9000/periodik/@result.get(String.valueOf(d))">
+            @result.get(String.valueOf(d))
+        </a>
+      </li>
+    }
   </body>
 </html>
