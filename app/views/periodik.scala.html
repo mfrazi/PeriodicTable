@@ -43,7 +43,15 @@
       <li>
       @String.valueOf(d) =>
         <a href="http://localhost:9000/periodik/@result.get(String.valueOf(d))">
-            @result.get(String.valueOf(d))
+            @if(d=="atomicNumber" || d=="atomicWeight") {
+                @for( data <- (String.valueOf(result.get(String.valueOf(d)))).split("\\^\\^")){
+                    @if(!data.contains("http")) {
+                        @data
+                    }
+                }
+            } else {
+                @result.get(String.valueOf(d))
+            }
         </a>
       </li>
     }
