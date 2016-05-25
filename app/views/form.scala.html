@@ -1,15 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Title</title>
-</head>
-<body>
-  <form method="GET" action="/periodik" >
-  Unsur:<br>
-    <input type="text" name="unsur" ><br><br>
-    <input type="submit" value="Submit">
-</form>
 
-</body>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>REKAYASA PENGETAHUAN</title>
+
+      <!-- Bootstrap -->
+    <link href="@routes.Assets.versioned("css/bootstrap.min.css")" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="@routes.Assets.versioned("css/animate.css")">
+
+      <!-- font awesome-->
+      <!-- <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="@routes.Assets.versioned("css/skillset.css")">
+
+
+    <link rel="stylesheet" type="text/css" href="@routes.Assets.versioned("css/owl.carousel.css")">
+    <link rel="stylesheet" type="text/css" href="@routes.Assets.versioned("css/owl.transitions.css")">
+    <link rel="stylesheet" type="text/css" href="@routes.Assets.versioned("css/owl.theme.css")">
+
+
+    <link rel="stylesheet" type="text/css" href="@routes.Assets.versioned("css/style.css")">
+  </head>
+  <body>
+    <div class="name-hero">
+		LABORATORIUM ONLINE
+    </div>
+    <div class="login">
+      <div class="login-header">
+			Masukan unsur untuk melihat detail
+      </div>
+      <div class="login-form" >
+        <form action="/periodik" method="GET">
+          <div class="form-group">
+            <input type="text" name="unsur" ><br><br>
+          </div>
+          <a href="/" class="btn btn-warning" role="button">Home</a>
+          <input type="submit" class="btn btn-success" value="Submit">
+        </form>
+      </div>
+    </div>
+  </body>
 </html>
