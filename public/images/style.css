@@ -4,10 +4,10 @@ body {
   padding: 0;
   margin: 0;
   text-align: center;
-  font-family: 'Titillium Web', Helvetica, Arial, sans-serif;
+  font-family: 'Titillium Web', Helvetica, Arial, sans-serif;  
   background-image: url(../images/2.jpg);
   background-repeat: no-repeat;
-  background-size: 1518px 740px;
+  background-size: 1518px 740px; 
 }
 
 
@@ -45,6 +45,7 @@ a:hover{
   position:absolute;
   left:50%; /* centers the loading animation horizontally one the screen */
   top:50%; /* centers the loading animation vertically one the screen */
+  background-image:url(img/preloader.gif); /* path to your loading animation */
   background-repeat:no-repeat;
   background-position:center;
   margin:-100px 0 0 -100px; /* is width and height divided by two */
@@ -64,9 +65,11 @@ a:hover{
   height:51px;
   border:none;
   text-indent:100%;
+  background:url(img/ui.totop.png) no-repeat left top;
 }
 
 #toTopHover {
+  background:url(img/ui.totop.png) no-repeat left -51px;
   width:51px;
   height:51px;
   display:block;
@@ -228,7 +231,15 @@ Image credits: unsplash.com
   background-position: center center;
   background-repeat: no-repeat;
 }
-
+.fade-carousel .slides .slide-1 {
+  background-image: url(img/photo.jpg); 
+}
+.fade-carousel .slides .slide-2 {
+  background-image: url(img/photo-02.jpg);
+}
+.fade-carousel .slides .slide-3 {
+  background-image: url(img/photo-03.jpg);
+}
 
 /********************************/
 /*          Media Queries       */
@@ -1034,6 +1045,9 @@ line-height: 45px !important;}
 /*============== Contact style ==============*/
 
 
+.contact_area{
+  background: url(img/photography.png);
+}
 
 .contact_section{
   margin-top: 60px;
@@ -1223,7 +1237,7 @@ line-height: 45px !important;}
   font-size: 4em;
   font-weight: bold;
   text-align: center;
-    background-color: #f2f2f2;
+  background-color: #f2f2f2
 }
 
 .login{
@@ -1234,9 +1248,6 @@ line-height: 45px !important;}
   background: #f2f2f2;
   border-radius: 10px;
 }
-.tampilan{
-    width:100px;
-}
 
 .login-header{
   font-size: 24px;
@@ -1244,15 +1255,15 @@ line-height: 45px !important;}
   margin-bottom: 20px;
 }
 .tampilan{
-    margin-left: 15%;
-    text-align: left;
-    font-size: 15px;
-    font-weight: 500;
-    font-family: monospace;
-    color: dodgerblue;
-    width: 300px;
-    background-color: white;
-    list-style-type:none
+  margin-left: 15%;
+  text-align: left;
+  font-size: 25px;
+  font-weight: 500;
+  font-family: monospace;
+  color: dodgerblue;
+  width: 300px;
+  background-color: white;
+  list-style-type:none
 }
 
 .btn-login{

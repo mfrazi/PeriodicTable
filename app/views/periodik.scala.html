@@ -39,11 +39,16 @@
   <body>
     @* And here's where we render the `Html` object containing
     * the page content. *@
+    <div class="name-hero">
+      LABORATORIUM ONLINE
+    </div>
+    <div class="login">
+      <div class="tampilan">
     @for(d <- variable) {
       <li>
       @String.valueOf(d) =>
         <a href="http://localhost:9000/periodik/@result.get(String.valueOf(d))">
-            @if(d=="atomicNumber" || d=="atomicWeight") {
+            @if(d=="atomicNumber" || d=="atomicWeight" || d=="proton" || d=="electron" || d=="neutron") {
                 @for( data <- (String.valueOf(result.get(String.valueOf(d)))).split("\\^\\^")){
                     @if(!data.contains("http")) {
                         @data
@@ -55,5 +60,9 @@
         </a>
       </li>
     }
+      </div>
+      <br>
+      <a href="/" class="btn btn-warning" role="button">Home</a>
+    </div>
   </body>
 </html>
