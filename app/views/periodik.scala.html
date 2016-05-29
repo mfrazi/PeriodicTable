@@ -45,38 +45,48 @@
     <div class="login">
       <div class="tampilan">
     @for(d <- variable) {
-      <li>
       @if(String.valueOf(d)=="1s"){
           Electron Configuration : <br/>
       }
 
       @if(!Character.isDigit((d.charAt(0)))) {
+          <li>
           @String.valueOf(d) =>
+          <a href="http://localhost:9000/periodik/@result.get(String.valueOf(d))">
+          @if(d=="atomicNumber" || d=="atomicWeight" || d=="proton" || d=="electron" || d=="neutron") {
+              @for( data <- (String.valueOf(result.get(String.valueOf(d)))).split("\\^\\^")){
+                  @if(!data.contains("http")) {
+                      @data
+                  }
+              }
+          } else { @if(Character.isDigit((d.charAt(0)))) {
+              @for( data <- (String.valueOf(result.get(String.valueOf(d)))).split("\\^\\^")){
+                  @if(!data.contains("http") && data!="0") {
+                      <span><sup>@data</sup></span>
+                  }
+              }
+          } else {
+              @result.get(String.valueOf(d))
+          }}
+          </a>
+          </li>
       } else {
           @for( data <- (String.valueOf(result.get(String.valueOf(d)))).split("\\^\\^")){
               @if(!data.contains("http") && data!="0") {
                   @String.valueOf(d)
               }
           }
+
+         @if(Character.isDigit((d.charAt(0)))) {
+              @for( data <- (String.valueOf(result.get(String.valueOf(d)))).split("\\^\\^")){
+                  @if(!data.contains("http") && data!="0") {
+                      <span><sup>@data</sup></span>
+                  }
+              }
+          } else {
+              @result.get(String.valueOf(d))
+          }
       }
-        <a href="http://localhost:9000/periodik/@result.get(String.valueOf(d))">
-            @if(d=="atomicNumber" || d=="atomicWeight" || d=="proton" || d=="electron" || d=="neutron") {
-                @for( data <- (String.valueOf(result.get(String.valueOf(d)))).split("\\^\\^")){
-                    @if(!data.contains("http")) {
-                        @data
-                    }
-                }
-            } else { @if(Character.isDigit((d.charAt(0)))) {
-                @for( data <- (String.valueOf(result.get(String.valueOf(d)))).split("\\^\\^")){
-                    @if(!data.contains("http") && data!="0") {
-                        <sup>@data</sup>
-                    }
-                }
-            } else {
-                @result.get(String.valueOf(d))
-            }}
-        </a>
-      </li>
     }
       </div>
       <br>
