@@ -46,7 +46,19 @@
       <div class="tampilan">
     @for(d <- variable) {
       <li>
-      @String.valueOf(d) =>
+      @if(String.valueOf(d)=="1s"){
+          Electron Configuration : <br/>
+      }
+
+      @if(!Character.isDigit((d.charAt(0)))) {
+          @String.valueOf(d) =>
+      } else {
+          @for( data <- (String.valueOf(result.get(String.valueOf(d)))).split("\\^\\^")){
+              @if(!data.contains("http") && data!="0") {
+                  @String.valueOf(d)
+              }
+          }
+      }
         <a href="http://localhost:9000/periodik/@result.get(String.valueOf(d))">
             @if(d=="atomicNumber" || d=="atomicWeight" || d=="proton" || d=="electron" || d=="neutron") {
                 @for( data <- (String.valueOf(result.get(String.valueOf(d)))).split("\\^\\^")){
@@ -54,9 +66,15 @@
                         @data
                     }
                 }
+            } else { @if(Character.isDigit((d.charAt(0)))) {
+                @for( data <- (String.valueOf(result.get(String.valueOf(d)))).split("\\^\\^")){
+                    @if(!data.contains("http") && data!="0") {
+                        <sup>@data</sup>
+                    }
+                }
             } else {
                 @result.get(String.valueOf(d))
-            }
+            }}
         </a>
       </li>
     }
